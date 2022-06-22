@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"></script>
+    <div id="app">
+        <button v-on:click="changeVisibility">Mostrar/ocultar</button>
+        <ul v-if="mostrar">
+            <tv-show 
+            v-for="(show, index) in tvshows" 
+           v-bind:key="index"
+           v-bind:nombre="show.nombre"
+           v-bind:temporadas="show.temporadas">   
+           </tv-show>
+
+
+           <!----li v-for="(show, index) in tvshows" v-bind:key="index">
+                <strong>{{ show.nombre }} </strong>({{ show.temporadas }} Temporadas)
+            </li>-->
+
+        </ul>
+        <div v-else>
+            no hya datos
+        </div>
+    </div>
+
+
+
+
+
+    <script src="main.js"> </script>
+
+</body>
+
+</html>
